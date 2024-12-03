@@ -15,6 +15,7 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 function displayLibrary() {
   const libraryContainer = document.querySelector('.library-container');
+  libraryContainer.textContent='';
   for(let book of myLibrary) {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -45,3 +46,35 @@ addBookToLibrary("Moby-Dick", "Herman Melville", 635, false);
 addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, true);
 
 displayLibrary();
+
+const dialogForm = document.querySelector('#dialogForm');
+const bookForm = document.querySelector(".form");
+const dialogWrapper = document.querySelector('.dialog-wrapper');
+// Button functionalities here
+const newBookBtn = document.querySelector('#newBookBtn');
+const submitBtn = document.querySelector('#submitBtn');
+newBookBtn.addEventListener('click', () => {
+  dialogForm.showModal();
+})
+dialogForm.addEventListener('click', (e) => {
+  if(!dialogWrapper.contains(e.target)) {
+    dialogForm.close();
+    bookForm.reset();
+  }
+})
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  // Get all the data from the form
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const page = document.querySelector("#pages").value;
+  const isRead = document.querySelector("#isRead").checked;
+  if(title && author && page) {
+    addBookToLibrary(title, author, page, isRead);
+    displayLibrary();
+    dialogForm.close();
+    bookForm.reset();
+  }
+})
+

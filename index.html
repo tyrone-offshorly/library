@@ -9,8 +9,36 @@
 </head>
 <body>
   <h1>Library</h1>
+  <dialog id="dialogForm">
+    <div class="dialog-wrapper">
+      <h2>Add a new book</h2>
+      <form method="post" action="" class="form">
+        <div class="form-control-wrapper">
+          <label for="title">Title of the book:</label>
+          <input required type="text" name="title" id="title">
+        </div>
+        <div class="form-control-wrapper">
+          <label for="author">Author of the book:</label>
+          <input required type="text" name="author" id="author">
+        </div>
+        <div class="form-control-wrapper">
+          <label for="pages">Number of pages:</label>
+          <input required type="number" name="pages" id="pages">
+        </div>
+        <div class="read-wrapper">
+          <label for="isRead">Already read?</label>
+          <input required type="checkbox" name="isRead" id="isRead">
+        </div>
+        <div class="buttons">
+          <button type="submit" id="submitBtn">Submit</button>
+          <button type="button" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
   <div class="library-container">
 
   </div>
+  <button type="button" id="newBookBtn">New Book</button>
 </body>
 </html>

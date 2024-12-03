@@ -1,5 +1,81 @@
+:root {
+  --dark-primary: #1976D2;
+  --light-primary: #BBDEFB;
+  --primary-color: #2196F3;
+  --primary-text: #212121;
+  --secondary-text: #757575;
+  --text-icons: #FFFFFF;
+  --accent-color: #536DFE;
+  --divider-color: #BDBDBD;
+}
 * {
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-primary);
+  padding: 1rem;
+}
+
+.library-container {
+  display: flex;
+  padding: 1rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 16px;
+  background-color: var(--primary-color);
+  color: var(--text-icons);
+  flex-basis: 250px;
+  height: 300px;
+  border-top: 1rem solid var(--dark-primary)
+}
+
+.card p:first-child {
+  font-size: 2rem;
+}
+
+dialog {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+}
+.form-control-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dialog-wrapper, .dialog-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dialog-wrapper {
+  padding: 16px;
+}
+
+dialog button {
+  align-self: baseline;
+  font-size: 12px;
+  width: 5rem;
+  height: 2rem; 
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--text-icons);
+  border-radius: 4px;
+}
+
+dialog button:hover {
+  background-color: var(--dark-primary);
+}
+
+#cancelBtn {
+  background-color: red;
 }
