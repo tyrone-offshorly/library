@@ -33,12 +33,25 @@ body {
   color: var(--text-icons);
   flex-basis: 250px;
   height: 300px;
-  border-top: 1rem solid var(--dark-primary)
+  border-top: 1rem solid var(--dark-primary);
+  display: flex;
+  flex-direction: column;
 }
 
 .card p:first-child {
   font-size: 2rem;
+  color: var(--primary-text)
 }
+
+.card p + p {
+  font-size: 1.5rem;
+  color: var(--text-icons);
+}
+
+.detail-wrapper {
+  flex-grow: 2;
+}
+
 
 dialog {
   margin: auto;
@@ -61,6 +74,29 @@ dialog {
   padding: 16px;
 }
 
+.toggle-button {
+  align-self: end;
+  border: none;
+  background-color: var(--dark-primary);
+  color: var(--text-icons);
+  font-size: 1.5rem;
+  border-radius: 4px;
+  width: 10rem;
+  height: 2rem;
+}
+
+.delete-button {
+  align-self: end;
+  margin-top: 8px;
+  border: none;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  font-size: 1.5rem;
+  width: 6rem;
+  height: 2rem;
+  color: white;
+}
+
 dialog button {
   align-self: baseline;
   font-size: 12px;
@@ -78,4 +114,16 @@ dialog button:hover {
 
 #cancelBtn {
   background-color: red;
+}
+#newBookBtn {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 1.5rem;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: var(--dark-primary);
+  color: var(--text-icons);
+  border-radius: 16px;
 }
