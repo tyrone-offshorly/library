@@ -1,12 +1,16 @@
 const myLibrary = [];
 
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
+class Book {
 
-  this.toggleIsRead = function () {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
+  
+
+  toggleIsRead = () => {
     this.isRead = !this.isRead;
   }
 }
